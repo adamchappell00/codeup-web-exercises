@@ -131,14 +131,13 @@ console.log(calculateTotal(5,100));
 // Generate a random number between 0 and 6
 var luckyNumber = Math.floor(Math.random() * 6);
 var userTotal = prompt("What is the total price of your items?");
-
+var afterDiscount = calculateTotal(luckyNumber, userTotal);
 alert("Your lucky number was "+ luckyNumber +", your total price before discount is " + userTotal +
-    ", your final price after discount is " + calculateTotal(luckyNumber, userTotal));
-console.log("LN:" + luckyNumber + ", Total:" + userTotal + ", After Discount:" + calculateTotal(luckyNumber, userTotal));
-
+    ", your final price after discount is " + afterDiscount.toFixed(2));
+console.log("LN:" + luckyNumber + ", Total:" + userTotal + ", After Discount:" + afterDiscount.toFixed(2));
 
 /**
- * TODO:
+ * TODO: COMPLETE
  * Write some JavaScript that uses a `confirm` dialog to ask the user if they
  * would like to enter a number. If they click 'Ok', prompt the user for a
  * number, then use 3 separate alerts to tell the user:
@@ -153,5 +152,24 @@ console.log("LN:" + luckyNumber + ", Total:" + userTotal + ", After Discount:" +
  * Can you refactor your code to use functions?
  * HINT: The way we prompt for a value could be improved
  */
-
+var userWannaPlay = confirm("Would you like to enter a number?");
+if (userWannaPlay){
+    var userNumber = prompt("Give me a number, please.");
+    console.log("User Number is: " + userNumber);
+    if (isNaN(userNumber)){
+        alert(userNumber + " ain't no Number!");
+    } else {
+        if (userNumber % 2 === 0) {
+            alert(userNumber + " is Even!");
+        } else {
+            alert(userNumber + " is Odd!");
+        }
+        alert("Your number plus 100 is " + (parseFloat(userNumber)+100));
+        if (userNumber < 0) {
+            alert(userNumber + " is negative!");
+        } else {
+            alert(userNumber + " is positive!");
+        }
+    }
+}
 })();
