@@ -109,7 +109,7 @@ books.forEach(function(book) {
 
 });
     /**
-     * Bonus:
+     * Bonus: BONUSED!
      * - Create a function named `createBook` that accepts a title and author
      *   name and returns a book object with the properties described
      *   previously. Refactor your code that creates the books array to instead
@@ -119,4 +119,26 @@ books.forEach(function(book) {
      *   `showBookInfo` function.
      */
 
+console.log("---Bonus Round---");
+var moreBooks = [];
+function createBook(newTitle, newAuthor){
+    var book = {title: newTitle, author: newAuthor};
+    console.log("Adding "+newTitle+", by "+newAuthor);
+    moreBooks.push(book);
+}
+function showBookInfo(book){
+    console.log("Book # " + (moreBooks.indexOf(book)+1));
+    console.log("Title: "+ book.title);
+    console.log("Author: "+book.author);
+    console.log("---");
+}
+createBook("Dragons Love Tacos", "Adam Rubin");
+createBook("Little Owl's Night", "Divya Srinivasan");
+createBook("Go the F*** to Sleep","Adam Mansbach");
+createBook("JavaScript for Dummies","Emily Vander Veer");
+createBook("Dada","Jimmy Fallon");
+
+moreBooks.forEach(function(book) {
+        showBookInfo(book);
+    });
 })();
