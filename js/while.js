@@ -12,8 +12,10 @@ do{
     if(allCones >= conesWanted){
         console.log(conesWanted + " cones sold!");
         allCones -= conesWanted;
-        continue;
-    } else if(allCones !>= conesWanted){
-        console.log("I cannot sell you " + conesWanted + ", I only have " + allCones)
+    } else if(allCones < conesWanted){
+        console.log("I cannot sell you " + conesWanted + ", I only have " + allCones);
+        allCones = 0;
     }
 } while (allCones > 0)
+console.log("I sold all of the Ice Cream!");
+
