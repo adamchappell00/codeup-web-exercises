@@ -62,8 +62,8 @@ function second(input){
         return input[1];
     }
 console.log("Second: "+ second([1, 2, 3, 4, 5]));
-function third(input){
-        return input[2];
+function last(input){
+        return input[input.length -1];
     }
-console.log("Third: "+ third([1, 2, 3, 4, 5]));
+console.log("Last: "+ last([1, 2, 3, 4, 5]));
 })();
