@@ -2,7 +2,28 @@
 console.log(Date());
 
 //Leave Line 1-3 Above, Put Current Exercise Below!
+function secondToLast(array){
+    console.log(array[array.length -2]);
+}
+secondToLast([1,2,3,4,5,6,7,8]);
+secondToLast(['Apples','Bananas','Carrots','Tacos']);
+secondToLast([false, false, true, false]);
+secondToLast(['Yes']);
 
+
+
+/* Previous Exerises Here
+--Weds October 20--
+function secondToLast(array){
+    console.log(array[array.length -2]);
+}
+secondToLast([1,2,3,4,5,6,7,8]);
+secondToLast(['Apples','Bananas','Carrots','Tacos']);
+secondToLast([false, false, true, false]);
+secondToLast(['Yes']);
+
+--Tues October 19--
+Write a program that console.logs the numbers from 1 to 100. But for multiples of three console.log “Fizz” instead of the number and for the multiples of five console.log “Buzz”. For numbers which are multiples of both three and five console.log “FizzBuzz”.
 for( var x = 1; x <= 100; x++){
     if((x % 3 ==0)&&(x % 5 == 0)){
         console.log("FizzBuzz");
@@ -16,14 +37,6 @@ for( var x = 1; x <= 100; x++){
     }
     console.log(x);
 }
-
-
-
-/* Previous Exerises Here
-
---Tues October 19--
-Write a program that console.logs the numbers from 1 to 100. But for multiples of three console.log “Fizz” instead of the number and for the multiples of five console.log “Buzz”. For numbers which are multiples of both three and five console.log “FizzBuzz”.
-
 --Mon October 18--
 Questions:
 - When writing code to test our tests in TDD it’s important to put yourself in the mindset of a (junior/senior) web developer. This will help you in ensuring that our tests are fully comprehensive.
