@@ -2,17 +2,19 @@
 console.log(Date());
 
 //Leave Line 1-3 Above, Put Current Exercise Below!
-function secondToLast(array){
-    console.log(array[array.length -2]);
+function moveToEnd(array){
+    var moveMe = array.shift();
+    array.push(moveMe);
+    return array;
 }
-secondToLast([1,2,3,4,5,6,7,8]);
-secondToLast(['Apples','Bananas','Carrots','Tacos']);
-secondToLast([false, false, true, false]);
-secondToLast(['Yes']);
 
-
+console.log(moveToEnd([1,2,3,4,5]));
+console.log(moveToEnd(["Monday", "Tuesday", "Wednesday", "Thursday","Friday"]));
+console.log(moveToEnd(['roll', 'rock', 'and']));
 
 /* Previous Exerises Here
+--Thurs October 21--
+
 --Weds October 20--
 function secondToLast(array){
     console.log(array[array.length -2]);
