@@ -1,5 +1,70 @@
-.img-circle {
-    height: 20px;
-    border-radius: 100%;
-    border: 2px solid #777777;
+.header-bar{
+    background: #777777;
+    overflow: auto;
+    margin: -10px
 }
+#logo-container{
+    margin: 12px;
+}
+.img-circle {
+    height: 30px;
+    float: left;
+}
+.nav-bar {
+    height: 45px;
+    line-height: 35px;
+    float: left;
+    padding-left: 15px;
+}
+.team{
+    margin: -10px;
+}
+.logos{
+    height: 50px;
+    float: left;
+}
+#team-name{
+    line-height: 50px;
+    font-size: 28px;
+    padding-left: 65px;
+}
+.member{
+    border: 3px solid #999999;
+    margin-top: -2px;
+    height: 92px;
+}
+.sub-header{
+    border: 2px solid #999999;
+    background: #CCCCCC;
+    height:36px;
+    font-size: 18px;
+    padding: 12px;
+    padding-left: 32px;
+    overflow: auto;
+}
+.member-logo{
+    height: 54px;
+    margin: 18px;
+    margin-left: 42px;
+    float: left;
+}
+.member-name{
+    float: left;
+}
+.member-title{
+    float: right;
+    margin: 25px;
+}
+.footer-left{
+    height: 32px;
+    line-height: 32px;
+    float: left;
+    padding-left: 14px;
+}
+.footer-right{
+    height: 32px;
+    line-height: 32px;
+    float: right;
+    padding-right: 14px;
+}
+
