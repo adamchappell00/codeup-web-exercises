@@ -2,6 +2,27 @@
 console.log(Date());
 
 //Leave Line 1-3 Above, Put Current Exercise Below!
+
+var myPokemon = {
+    name: "Ponyta",
+    type: "Fire",
+    gender: "Male",
+    abilities: ["Run Away", "Flash Fire"],
+    weaknesses: ["Ground", "Water", "Rock"],
+    statistics: {
+        health: 10,
+        speed: 20,
+        attack: 15,
+        defense: 12
+    }
+}
+console.log(myPokemon);
+
+/* Previous Exerises Here
+
+--Mon October 25--
+
+--Thurs October 21--
 function moveToEnd(array){
     var moveMe = array.shift();
     array.push(moveMe);
@@ -11,10 +32,6 @@ function moveToEnd(array){
 console.log(moveToEnd([1,2,3,4,5]));
 console.log(moveToEnd(["Monday", "Tuesday", "Wednesday", "Thursday","Friday"]));
 console.log(moveToEnd(['roll', 'rock', 'and']));
-
-/* Previous Exerises Here
---Thurs October 21--
-
 --Weds October 20--
 function secondToLast(array){
     console.log(array[array.length -2]);
