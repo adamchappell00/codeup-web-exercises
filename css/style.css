@@ -1,11 +1,39 @@
+body {
+    background-color: lightblue;
+    font-family: 'Raleway', sans-serif;
+    background-image: url("/img/veridianb1.png");
+    overflow: auto;
+}
 .fancy-header {
     color: red;
+    text-align: center;
+}
+p {
+    text-align: center;
+}
+h2{
+    text-decoration: underline;
+}
+ul {
+    list-style-type: "+";
+    padding: 0;
 }
 table {
     border-collapse: collapse;
 }
+th{
+    text-align: center;
+    font-size: larger;
+    font-weight: bold;
+    text-decoration: underline;
+    background-color: #E6ECF0;
+}
+tr td {
+    padding: 5px;
+}
 .container {
     margin: 5px auto;
+    width: 100%;
     clear: left;
 }
 .box {
@@ -13,4 +41,30 @@ table {
 }
 .inner{
     padding-left: 5px;
+}
+#left{
+    margin: 0 auto;
+    float:left;
+}
+#right{
+    margin: 0 auto;
+    float:right
+}
+#center{
+    clear-after: both;
+    margin: 0 auto;
+    padding-top; 12px;
+    width: 240px;
+}
+a:link {
+    color:blue;
+}
+a:visited {
+    color:black;
+}
+a:hover {
+    color:red;
+}
+a:active {
+    color:green;
 }
