@@ -36,6 +36,7 @@ console.log(isCanadian(wrestlers));
 
 /* Previous Exerises Here
 --Tues October 26--
+Create a function that accepts an array as an argument, and that returns an array of objects that have a nationality property of “Canadian”.
 
 
 --Mon October 25--
