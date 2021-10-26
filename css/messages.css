@@ -1,3 +1,14 @@
+:root{
+    --bg-info: lightblue;
+    --txt-info: blue;
+    --bg-success: lightgreen;
+    --txt-success: green;
+    --bg-warning: lightgoldenrodyellow;
+    --txt-warning: orange;
+    --bg-error: lightcoral;
+    --txt-error: red;
+}
+
 body, html {
     height: 100%;
     width: 100%;
@@ -12,18 +23,18 @@ body, html {
     margin: 5px;
 }
 .message-info {
-    color: blue;
-    background-color: lightblue;
+    color: var(--txt-info);
+    background-color: var(--bg-info);
 }
 .message-success {
-    color: green;
-    background-color: lightgreen;
+    color: var(--txt-success);
+    background-color: var(--bg-success);
 }
 .message-warning {
-    color: orange;
-    background-color: lightgoldenrodyellow;
+    color: var(--txt-warning);
+    background-color: var(--bg-warning);
 }
 .message-error {
-    color: red;
-    background-color: lightcoral;
+    color: var(--txt-error);
+    background-color: var(--bg-error);
 }
