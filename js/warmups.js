@@ -2,7 +2,43 @@
 console.log(Date());
 
 //Leave Line 1-3 Above, Put Current Exercise Below!
+function isCanadian(array){
+    var canadians = [];
+    array.forEach(function(person){
+        if(person.nationality=== "Canadian"){
+            canadians.push(person);
+        }
+    })
+    return canadians;
+}
+var wrestlers = [
+    {
+        name: "Bret Hart",
+        nationality: "Canadian"
+    }, {
+        name: "Shawn Michaels",
+        nationality: "American"
+    }, {
+        name: "Christian Cage",
+        nationality: "Canadian"
+    }, {
+        name: "Keiji Mutoh",
+        nationality: "Japanese"
+    }, {
+        name: "Eddy Guerrero",
+        nationality: "American"
+    }, {
+        name: "Owen Hart",
+        nationality: "Canadian"
+    }
+];
+console.log(isCanadian(wrestlers));
 
+/* Previous Exerises Here
+--Tues October 26--
+
+
+--Mon October 25--
 var myPokemon = {
     name: "Ponyta",
     type: "Fire",
@@ -17,11 +53,6 @@ var myPokemon = {
     }
 }
 console.log(myPokemon);
-
-/* Previous Exerises Here
-
---Mon October 25--
-
 --Thurs October 21--
 function moveToEnd(array){
     var moveMe = array.shift();
@@ -32,6 +63,7 @@ function moveToEnd(array){
 console.log(moveToEnd([1,2,3,4,5]));
 console.log(moveToEnd(["Monday", "Tuesday", "Wednesday", "Thursday","Friday"]));
 console.log(moveToEnd(['roll', 'rock', 'and']));
+
 --Weds October 20--
 function secondToLast(array){
     console.log(array[array.length -2]);
