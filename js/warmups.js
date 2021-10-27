@@ -2,8 +2,24 @@
 console.log(Date());
 
 //Leave Line 1-3 Above, Put Current Exercise Below!
+var circle = {
+    radius: 36
+}
 
-var foods = ['cookies', 'carrots', 'cake', 'brownies', 'bananas', 'apples', 'celery', 'pumpkin pie']
+console.log(Math.round(Math.PI*circle.radius*2));
+/* Previous Exerises Here
+
+--Weds October 27--
+
+Warmup
+Var circle = {
+	radius: 36
+}
+
+Find the area of the circle, and round it to the nearest whole number using the Math object.
+
+Write a function named 'filterJunkFood' that takes in an array of foods and returns an array with only fruit and vegetable strings. Use the array above to test your output.
+ar foods = ['cookies', 'carrots', 'cake', 'brownies', 'bananas', 'apples', 'celery', 'pumpkin pie']
 var junk = ['cookies', 'cake', 'brownies', 'pumpkin pie']
 function filterJunkFood(arr){
     var notJunk = [];
@@ -15,11 +31,6 @@ function filterJunkFood(arr){
     return notJunk;
 }
 console.log(filterJunkFood(foods));
-/* Previous Exerises Here
-
---Weds October 27--
-Write a function named 'filterJunkFood' that takes in an array of foods and returns an array with only fruit and vegetable strings. Use the array above to test your output.
-
 
 --Tues October 26--
 Create a function that accepts an array as an argument, and that returns an array of objects that have a nationality property of “Canadian”.
