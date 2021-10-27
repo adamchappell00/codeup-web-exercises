@@ -6,7 +6,7 @@ var circle = {
     radius: 36
 }
 
-console.log(Math.round(Math.PI*circle.radius*2));
+console.log(Math.round(Math.PI*circle.radius**2));
 /* Previous Exerises Here
 
 --Weds October 27--
