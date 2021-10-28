@@ -1,0 +1,49 @@
+/* Root Variables and General Element Styles */
+:root {
+    --base-txt: #555555;
+    --emphatic-txt: black;
+
+}
+* {
+    box-sizing: border-box;
+}
+body, html, form, p {
+    margin: 0;
+    padding: 0;
+    color: var(--base-txt)
+}
+/* Nav Bar Styling */
+nav {
+    margin: 0;
+    background: #CCCCCC;
+    display: flex;
+    position: fixed;
+    width: 100%;
+    z-index: 3;
+    align-items: center;
+    justify-content: space-between;
+}
+.nav-link:hover{
+    background-color: #AAAAAA;
+}
+.navbar-brand {
+    margin: 0 0 5px 0;
+}
+.navbar-text {
+    display: inline-block;
+    margin: 0;
+}
+.left {
+    justify-content: flex-start;
+}
+
+/*   Generic Boostrap Style Overrides */
+a {
+    color: var(--base-txt);
+    padding: 1.5em;
+    margin: -1em;
+}
+a:hover {
+    text-decoration: none;
+    color: var(--base-txt);
+}

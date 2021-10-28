@@ -6,12 +6,19 @@
 }
 .model{
     background-color: lightgreen;
-    padding: 25px;
+    padding: 20px;
 }
 .instructions ul{
     color: darkgreen;
     background-color: coral;
     width: 25%;
+}
+h1 {
+    margin: auto;
+    justify-content: center;
+}
+h4 {
+    margin: 0;
 }
 ol {
     font-weight: bold;
