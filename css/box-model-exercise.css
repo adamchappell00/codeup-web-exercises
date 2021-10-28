@@ -1,0 +1,44 @@
+.instructions{
+    background-color: lightblue;
+    overflow: auto;
+    border: 1em dotted red;
+    padding: 1em;
+}
+.model{
+    background-color: lightgreen;
+    padding: 25px;
+}
+.instructions ul{
+    color: darkgreen;
+    background-color: coral;
+    width: 25%;
+}
+ol {
+    font-weight: bold;
+    margin: 2em;
+    background-color: white;
+}
+.sandwhich{
+    height: 48px;
+    width: 50%;
+    padding-left: 10px;
+    margin-left: 50px;
+}
+#bread{
+    background-color: tan;
+    border: 1px solid brown;
+}
+#jelly{
+    background-color: purple;
+    border-radius: 10px;
+}
+#pb{
+    background-color: saddlebrown;
+    border-radius: 10px;
+}
+#plate{
+    border: 1px solid black;
+    background-color: white;
+    padding-left: 10px;
+    width: 75%;
+}
