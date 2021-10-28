@@ -36,6 +36,14 @@ nav {
 .left {
     justify-content: flex-start;
 }
+.jumbotron {
+    margin: 0;
+    padding: 0;
+    background-image: url("/img/pizza.png");
+}
+
+/* */
+
 
 /*   Generic Boostrap Style Overrides */
 a {
