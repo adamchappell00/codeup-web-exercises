@@ -20,6 +20,16 @@ h1 {
     opacity: 80%;
     text-align: center;
 }
+label {
+    margin-bottom: 0;
+}
+a:hover {
+    text-decoration: none;
+    color: var(--base-txt);
+}
+.nav-link:hover{
+    background-color: #AAAAAA;
+}
 /* Nav Bar Styling */
 nav {
     margin: -5px 0;
@@ -32,8 +42,11 @@ nav {
     align-items: center;
     justify-content: space-between;
 }
-.nav-link:hover{
-    background-color: #AAAAAA;
+
+nav a {
+    color: var(--base-txt);
+    padding: 1.5em;
+    margin: -1em;
 }
 .navbar-brand {
     margin: 0 0 10px 0;
@@ -66,15 +79,54 @@ nav {
 }
 
 /* Form and Container Styles */
+.container{
+    margin: 1em;
+    width: 100%;
+}
+.badge {
+    margin: 3px;
+}
+.card{
+    margin: 1em;
+
+}
+.blue-swatch{
+    margin: 0;
+    padding: 1em;
+    background-color: blue;
+    color: white;
+}
+.grey-swatch {
+    margin: 0;
+    padding: 1em;
+    background-color: #EEEEEE;
+    color: black;
+}
+.inner-card{
+    margin: 0;
+}
+.inner-card>.card-body{
+    margin: 0;
+    padding: .8em;
+}
+.radio-card{
+    margin: 0;
+}
+.right-button{
+    justify-self: right;
+}
+.btn-group{
+   justify-items: right;
+}
+.build-form{
+    margin-top: 1em;
+    margin-left: 1em;
+    color: var(--emphatic-txt)
+}
+.select-form{
+    padding: .5em;
+}
 
 
-/*   Generic Boostrap Style Overrides */
-a {
-    color: var(--base-txt);
-    padding: 1.5em;
-    margin: -1em;
-}
-a:hover {
-    text-decoration: none;
-    color: var(--base-txt);
-}
+
+

@@ -24,18 +24,170 @@
             <p class="navbar-text nav-link" id="signup"><a href="#">&#x1F464; Signup</a></p>
         </div>
     </nav>
-<!-- Main page content -->
     <div class="jumbotron d-sm-none d-md-block">
         <div class="heading-bar">
             <h1>Welcome to Pizza World!</h1>
         </div>
     </div>
-
+    <!-- Build Your Pizza Tab Control-->
     <section class="container">
-
+        <h2>Build your own pizza!</h2>
+        <ul class="nav nav-tabs" id="build-tabs" role="tablist">
+            <li class="nav-item">
+                <button class="nav-link btn active" id="crust-tab-button" data-bs-toggle="tab" data-bs-target="#crust-tab"
+                type="button" role="tab" aria-controls="crust-tab" aria-selected="true">
+                <span class="badge badge-secondary">1</span>Size and Crust</button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-link btn" id="cheese-sauce-tab-button" data-bs-toggle="tab" data-bs-target="#cheese-sauce-tab"
+                type="button" role="tab" aria-controls="cheese-sauce-tab" aria-selected="false">
+                <span class="badge badge-secondary">2</span>Cheese and Sauce</button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-link btn" id="toppings-tab-button" data-bs-toggle="tab" data-bs-target="#toppings-tab"
+                type="button" role="tab" aria-controls="toppings-tab" aria-selected="false">
+                <span class="badge badge-secondary">3</span>Toppings</button>
+            </li>
+        </ul>
     </section>
+    <!-- Build Your Pizza Tab Panel 1: Size and Crust-->
+    <div class="tab-content" id="myTabContent">
+        <form id="pizza-builder" method="POST" action="http://request-inspector.glitch.me/">
+            <!-- method="POST" action="http://request-inspector.glitch.me/"-->
+        <div class="tab-pane fade show active" id="crust-tab" role="tabpanel" aria-labelledby="crust-tab-button">
+            <div class="card">
+                <h5 class="card-body blue-swatch">Choose size and crust</h5>
+                <div class="card">
+                    <h6 class="card-body grey-swatch"> Hand Tossed</h6>
+                    <p class="card-body"> Garlic seasoned crust with a rich, buttery taste.</p>
+                    <div class="card radio-card">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <input type="radio" name="size-crust" id="hand-small" value="hand-small">
+                                <label for="hand-small"> Small (10") </label></li>
+                            <li class="list-group-item">
+                                <input type="radio" name="size-crust" id="hand-medium" value="hand-medium">
+                                <label for="hand-medium"> Medium (12") </label></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card">
+                    <h6 class="card-body grey-swatch"> Thin Crust</h6>
+                    <p class="card-body"> Thin enough for an optimum crispy to crunchy ratio.</p>
+                    <div class="card radio-card">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <input type="radio" name="size-crust" id="thin-medium" value="thin-medium">
+                                <label for="thin-medium"> Medium (12") </label></li>
+                            <li class="list-group-item">
+                                <input type="radio" name="size-crust" id="thin-large" value="thin-large">
+                                <label for="thin-large">Large (14") </label></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-body grey-swatch text-right">
+                    <button type="button" id="forward-to-sauce" class="btn btn-primary mb-2 right-button">Next Step <b> > </b></button>
+                </div>
+            </div>
+        </div>
+        <!-- Build Your Pizza Tab Panel 2: Cheese and Sauce-->
+        <div class="tab-pane fade" id="cheese-sauce-tab" role="tabpanel" aria-labelledby="cheese-sauce-tab-button">
+            <div class="card">
+                <h5 class="card-body blue-swatch">Choose Cheese and Sauce</h5>
+                <div class="card">
+                    <h6 class="card-body grey-swatch"> Cheese</h6>
+                        <label class="build-form" for="cheese"> How Much?</label>
+                        <select class="card select-form" name="cheese" id="cheese">
+                            <option value="light">Light</option>
+                            <option value="normal" selected>Normal</option>
+                            <option value="extra">Extra</option>
+                            <option value="double">Double</option>
+                        </select>
+                    </div>
+                <div class="card">
+                    <h6 class="card-body grey-swatch"> Sauce </h6>
+                    <div class="card radio-card">
+                        <label class="build-form" for="sauce-type"> What Type?</label>
+                            <select class="card select-form build-form" name="sauce-type" id="sauce-type">
+                                <option name="sauce-type" id="tomato" value="tomato">Tomato Sauce</option>
+                                <option name="sauce-type" id="marinara" value="marinara" selected>Marinara Sauce</option>
+                                <option name="sauce-type" id="bbq" value="barbecue">BBQ Sauce</option>
+                                <option name="sauce-type" id="alfredo" value="alfredo">Alfredo Sauce</option>
+                            </select>
+                    </div>
+                    <div class="card radio-card">
+                        <label class="build-form" for="sauce-amount"> How Much?</label>
+                            <select class="card select-form build-form" name="sauce-amount" id="sauce-amount">
+                                <option name="sauce-amount" id="light" value="light">Light</option>
+                                <option name="sauce-amount" id="normal" value="regular" selected>Normal</option>
+                                <option name="sauce-amount" id="extra" value="extra">Extra</option>
+                            </select>
+                    </div>
+                </div>
+                <div class="card-footer grey-swatch text-right" >
+                    <div class="btn-group" role="group">
+                        <button type="button" id="back-size-crust" class="btn btn-primary mb-2 right-button"><b> < </b> Previous Step </button>
+                        <button type="button" id="forward-to-toppings" class="btn btn-primary mb-2 right-button">Next Step <b> > </b></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Build Your Pizza Tab Panel 3: Toppings-->
+        <div class="tab-pane fade" id="toppings-tab" role="tabpanel" aria-labelledby="toppings-tab-button">
+            <div class="card">
+                <h5 class="card-body blue-swatch">Choose Toppings</h5>
+                <div class="card">
+                    <h6 class="card-body grey-swatch"> Choose Meats</h6>
+                    <div class="card radio-card">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <input type="checkbox" name="meat" id="beef" value="beef">
+                                <label for="beef">Beef </label></li>
+                            <li class="list-group-item">
+                                <input type="checkbox" name="meat" id="ham" value="ham">
+                                <label for="ham">Ham </label></li>
+                            <li class="list-group-item">
+                                <input type="checkbox" name="meat" id="steak" value="steak">
+                                <label for="steak">Philly Steak </label></li>
+                            <li class="list-group-item">
+                                <input type="checkbox" name="meat" id="bacon" value="bacon">
+                                <label for="bacon">Bacon </label></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card">
+                    <h6 class="card-body grey-swatch"> Choose Non-Meats</h6>
+                    <div class="card radio-card">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <input type="checkbox" name="non-meat" id="green-peppers" value="green-peppers">
+                                <label for="green-peppers">Green Peppers </label></li>
+                            <li class="list-group-item">
+                                <input type="checkbox" name="non-meat" id="mushrooms" value="mushrooms">
+                                <label for="mushrooms">Mushrooms </label></li>
+                            <li class="list-group-item">
+                                <input type="checkbox" name="non-meat" id="onions" value="onions">
+                                <label for="onions">Onions </label></li>
+                            <li class="list-group-item">
+                                <input type="checkbox" name="non-meat" id="jalapenos" value="jalapenos">
+                                <label for="jalapenos">Jalapeno Peppers </label></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-body grey-swatch text-right">
+                    <button type="submit" id="pizza-checkout" class="btn btn-primary mb-2 right-button"> Checkout &#128722;</button>
+                </div>
+            </div>
+        </div>
+        </form>
+    </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-<!-- Your custom JS goes here -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+<!-- Script for Tab Control    -->
+    <script src="js/order-pizza.js"></script>
+
 </body>
 </html>
