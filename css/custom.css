@@ -12,9 +12,18 @@ body, html, form, p {
     padding: 0;
     color: var(--base-txt)
 }
+h1 {
+    margin: 0 auto;
+    border: collapse;
+    padding: 0;
+    color: var(--emphatic-txt);
+    opacity: 80%;
+    text-align: center;
+}
 /* Nav Bar Styling */
 nav {
-    margin: 0;
+    margin: -5px 0;
+    padding: 0;
     background: #CCCCCC;
     display: flex;
     position: fixed;
@@ -27,22 +36,36 @@ nav {
     background-color: #AAAAAA;
 }
 .navbar-brand {
-    margin: 0 0 5px 0;
+    margin: 0 0 10px 0;
 }
 .navbar-text {
     display: inline-block;
-    margin: 0;
+    margin: -.25em;
+    padding: 1em;
+
 }
 .left {
     justify-content: flex-start;
 }
 .jumbotron {
     margin: 0;
-    padding: 0;
+    padding-top: 6em;
+    padding-bottom: 2.5em;
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
     background-image: url("/img/pizza.png");
 }
+.heading-bar{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: #FFFFFF;
+    opacity: 50%;
 
-/* */
+}
+
+/* Form and Container Styles */
 
 
 /*   Generic Boostrap Style Overrides */
