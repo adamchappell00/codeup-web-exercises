@@ -1,0 +1,19 @@
+
+i {
+    margin: 4px;
+}
+hr{
+    border: 3px solid #555555;
+    border-radius: 2px;
+}
+#big-line {
+    border: 6px solid #820000;
+    border-radius: 3px;
+}
+#contact, #title-head {
+    justify-content: center;
+    text-align: center;
+}
+#awards {
+    margin-top: auto;
+}

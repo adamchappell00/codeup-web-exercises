@@ -1,18 +1,20 @@
 
-/*
-var tabEl = document.querySelector('button[data-bs-toggle="tab"]')
-tabEl.addEventListener('shown.bs.tab', function (event) {
-    event.target // newly activated tab
-    event.relatedTarget // previous active tab
-})
-*/
-var thirdTab = document.querySelector('#toppings-tab-button')
-var toppingTab = new bootstrap.Tab(thirdTab)
 
-toppingTab.show()
 
 
 // Tab Control for the Pizza Builder Form, Includes Listeners & Functions
+$('#crust-tab-button').on('click', function (e) {
+    e.preventDefault()
+    $('#crust-tab').tab('show')
+})
+$('#cheese-sauce-tab-button').on('click', function (e) {
+    e.preventDefault()
+    $('#cheese-sauce-tab').tab('show')
+})
+$('#toppings-tab-button').on('click', function (e) {
+    e.preventDefault()
+    $('#toppings-tab').tab('show')
+})
 /*
 var tab1 = function(){
    // var tab = new bootstrap.Tab(crustSizeTab)
@@ -24,7 +26,7 @@ var tab2 = function(){
     $('#cheese-sauce-tab').tab('show')
 }
 var tab3 = function(){
-   // var tab = new bootstrap.Tab(toppingTab)
+    //var thisTab = new bootstrap.Tab(toppingTab)
     $('#toppings-tab').tab('show')
 }
 var crustSizeTab = document.getElementById('crust-tab-button');
@@ -37,23 +39,10 @@ cheeseSauceTab.addEventListener('click', tab2);
 var toppingTab = document.getElementById('toppings-tab-button');
 toppingTab.addEventListener('click', tab3);
 
-// Form Control Listener and Function
-// Currently Logs submitted values without HTML POST
-var submitPizza = function(){
-    /*
-    console.log("Size and Crust:");
-    console.log(document.getElementsByName("size-crust"));
-    console.log("Cheese Amount:");
-    console.log(document.getElementById("cheese"));
-    console.log("Sauce:");
-    console.log(document.getElementById("sauce-type"));
-    console.log(document.getElementById("sauce-amount"));
-    console.log("Toppings:");
-    console.log(document.getElementsByName("meat"));
-    console.log(document.getElementsByName("non-meat"));
+// Form Submission Listener and Function
+var submitPizza = function() {
+    // Needs connection to inner function
 }
-     */
-
-
-// var orderPizza = document.getElementById("pizza-checkout");
-// orderPizza.addEventListener("click", submitPizza);
+var orderPizza = document.getElementById("pizza-checkout");
+ orderPizza.addEventListener("click", submitPizza);
+*/
