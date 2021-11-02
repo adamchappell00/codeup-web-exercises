@@ -6,11 +6,17 @@ tabEl.addEventListener('shown.bs.tab', function (event) {
     event.relatedTarget // previous active tab
 })
 */
+var thirdTab = document.querySelector('#toppings-tab-button')
+var toppingTab = new bootstrap.Tab(thirdTab)
+
+toppingTab.show()
 
 
 // Tab Control for the Pizza Builder Form, Includes Listeners & Functions
+/*
 var tab1 = function(){
-   //var tab = new bootstrap.Tab(crustSizeTab)
+   // var tab = new bootstrap.Tab(crustSizeTab)
+
     $('#crust-tab').tab('show');
 }
 var tab2 = function(){
@@ -45,8 +51,9 @@ var submitPizza = function(){
     console.log("Toppings:");
     console.log(document.getElementsByName("meat"));
     console.log(document.getElementsByName("non-meat"));
-
-     */
 }
-var orderPizza = document.getElementById("pizza-checkout");
-orderPizza.addEventListener("click", submitPizza);
+     */
+
+
+// var orderPizza = document.getElementById("pizza-checkout");
+// orderPizza.addEventListener("click", submitPizza);

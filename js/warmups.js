@@ -2,12 +2,83 @@
 console.log(Date());
 
 //Leave Line 1-3 Above, Put Current Exercise Below!
-var circle = {
-    radius: 36
-}
 
-console.log(Math.round(Math.PI*circle.radius**2));
+// Create a function that takes in an array of objects, and returns the object with the highest quantity property.
+
+
+    var groceries = [
+    {
+        name: "carrots",
+        quantity: 5
+    },{
+        name: "yams",
+        quantity: 50
+    },{
+        name: "oranges",
+        quantity: 9
+    },{
+        name: "onions",
+        quantity: 2
+    },{
+        name: "cucumbers",
+        quantity: 6
+    },{
+        name: "potatoes",
+        quantity: 8
+    }
+];
+function getHighestQuantityObject(obj){
+    var local =
+        { name: "", quantity: 0}
+    ;
+    obj.forEach(function(input){
+        if(input.quantity > local.quantity){
+            local = input;
+        }
+    })
+    return local;
+}
+console.log(getHighestQuantityObject(groceries));  //returns {name: “yams”, quantity: 50};
+
+
 /* Previous Exerises Here
+--Tues November 2--
+
+
+    var groceries = [
+    {
+        name: "carrots",
+        quantity: 5
+    },{
+        name: "yams",
+        quantity: 50
+    },{
+        name: "oranges",
+        quantity: 9
+    },{
+        name: "onions",
+        quantity: 2
+    },{
+        name: "cucumbers",
+        quantity: 6
+    },{
+        name: "potatoes",
+        quantity: 8
+    }
+];
+function getHighestQuantityObject(obj){
+    var local =
+        { name: "", quantity: 0}
+    ;
+    obj.forEach(function(input){
+        if(input.quantity > local.quantity){
+            local = input;
+        }
+    })
+    return local;
+}
+console.log(getHighestQuantityObject(groceries));  //returns {name: “yams”, quantity: 50};
+
 
 --Weds October 27--
 
@@ -15,6 +86,7 @@ Warmup
 Var circle = {
 	radius: 36
 }
+console.log(Math.round(Math.PI*circle.radius**2));
 
 Find the area of the circle, and round it to the nearest whole number using the Math object.
 
