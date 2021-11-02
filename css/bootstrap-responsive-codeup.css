@@ -1,0 +1,38 @@
+:root {
+    --red-1: #E6563B;
+    --orange-1: #EB9D3A;
+    --green-1: #7CB06C;
+    --blue-1: #00ABA9;
+    --extra-light-gr: #F0F0F0;
+    --light-gr: #E6E6E6;
+}
+body {
+    background: var(--light-gr);
+
+}
+.big-circle {
+
+}
+.small-circle {
+    width: 18px;
+    height: 18px;
+    border-radius: 9px;
+    margin: 4px;
+    font-weight: bold;
+    font-size: 12px;
+    text-align: center;
+    padding-left: 2px;
+}
+.red {
+    background-color: var(--red-1);
+}
+.orange {
+    background-color: var(--orange-1);
+}
+.green {
+    background-color: var(--green-1);
+}
+.blue {
+    background-color: var(--blue-1);
+}
+
