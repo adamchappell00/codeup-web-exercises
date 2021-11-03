@@ -2,44 +2,39 @@
 console.log(Date());
 
 //Leave Line 1-3 Above, Put Current Exercise Below!
-
-// Create a function that takes in an array of objects, and returns the object with the highest quantity property.
-
-
-    var groceries = [
-    {
-        name: "carrots",
-        quantity: 5
-    },{
-        name: "yams",
-        quantity: 50
-    },{
-        name: "oranges",
-        quantity: 9
-    },{
-        name: "onions",
-        quantity: 2
-    },{
-        name: "cucumbers",
-        quantity: 6
-    },{
-        name: "potatoes",
-        quantity: 8
+// Write a function named ‘sortByName’ that takes in an array of objects, and returns an array of objects in alphabetical order based on the name property.
+var products = [
+{
+    name: 'Playstation 5',
+    price: 599.99
+}, {
+    name: 'Logitech Wireless Mouse',
+    price: 23.99
+}, {
+    name: 'Macbook Pro',
+    price: 1099.99
+}, {
+    name: 'GoPro HERO10',
+    price: 399.99
+}, {
+    name: '12" & 6" Metal Ruler Set',
+    price: 5.99
+}]
+function sortByName(arr){
+    arr.sort(function(input1, input2){
+    var name1 = input1.name.toLowerCase();
+    var name2 = input2.name.toLowerCase();
+    if(name1 < name2){
+        return -1;
     }
-];
-function getHighestQuantityObject(obj){
-    var local =
-        { name: "", quantity: 0}
-    ;
-    obj.forEach(function(input){
-        if(input.quantity > local.quantity){
-            local = input;
-        }
-    })
-    return local;
+    if (name1 > name2) {
+        return 1;
+    }
+    return 0;
+    });
+    return arr;
 }
-console.log(getHighestQuantityObject(groceries));  //returns {name: “yams”, quantity: 50};
-
+console.log(sortByName(products));
 
 /* Previous Exerises Here
 --Tues November 2--
