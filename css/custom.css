@@ -123,6 +123,9 @@ nav a {
     margin-left: 1em;
     color: var(--emphatic-txt)
 }
+.tab-pane:not(.active) {
+    display: none;
+}
 .select-form{
     padding: .5em;
 }
