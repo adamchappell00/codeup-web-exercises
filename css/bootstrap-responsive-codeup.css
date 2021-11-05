@@ -130,6 +130,7 @@ ul {
 @media screen and (min-width:768px) {
 
 /* Removing Small-Specific Margins for Nav Items*/
+
 ul {
     justify-content: space-evenly;
 }
