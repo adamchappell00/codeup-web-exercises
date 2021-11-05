@@ -13,14 +13,16 @@
 </head>
 <body>
 <div class="container-fluid">
-    <div class="row">
-        <div class="col-sm-12">
-            <div class="row" id="header-row">
-                <div class="col-sm-12 col-md-3" id="logo-col">
+    <div class="row" id="header-row">
+        <div class="container-fluid content-main">
+<!--The above div.container is for the max width of the page content without limiting the header stripe -->
+            <!--First Section: All heading content, logo, nav-links, and company name-->
+            <div class="row" id="header-content">
+                <div class="col-sm-12 col-md-2" id="logo-col">
                     <img src="img/logo.png" alt="company-logo" id="logo">
                 </div>
-                <div class="col-sm-12 col-md-12 col-lg-3" id="co-name">
-                    codeup design
+                <div class="col-sm-12 col-md-6" id="co-name">
+                    <p>codeup design</p>
                 </div>
                 <div class="col-sm-12 col-md-4 col-lg-4" id="nav-holder">
                     <ul>
@@ -33,7 +35,27 @@
             </div>
         </div>
     </div>
+    <!-- Next Section: Title and Subtitle, Icons-->
+    <div class="container-fluid content-main">
+        <div class="row" id="title">
+            <h1>VISUAL DESIGN & WEB DEVELOPMENT</h1>
+            <br>
+            <h3>FROM PARK CITY, UTAH</h3>
+        </div>
+        <div class="row circle-icons">
+            <div class="col-12 col-sm-6">
+                <h5 class="big-circle red">DESIGN</h5>
+                <h5 class="big-circle orange">DEVELOP</h5>
+                <h5 class="big-circle green">SUPPORT</h5>
+                <h5 class="big-circle blue">HOST</h5>
+            </div>
+        </div>
+        <hr class="d-none d-sm-block" id="mid-hr">
+        <div class="row">
+            Finally-Real-Content.com
+        </div>
 
+    </div>
 </div>
 </body>
 </html>

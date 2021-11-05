@@ -1,4 +1,5 @@
 /*  Root, Psuedo, Variables, All, Body Styles  */
+/*  All XS Styling is applied as the default*/
 :root {
     --red-1: #E6563B;
     --orange-1: #EB9D3A;
@@ -12,11 +13,16 @@
 }
 body {
     background: var(--light-gr);
-    font-family: Abel, sans-serif;
 }
 /* ElementStyling*/
-h1, h2, h3, h4, h5,{
-    font-family: Anton, sans-serif;
+li, p {
+    font-family: Abel, sans-serif;
+}
+h1, h2, h3, h4, h5{
+    font-family: Anton, sans-serif !important;
+    font-weight: bold;
+    margin-top: .25em !important;;
+    margin-bottom: .5em !important;;
 }
 h1{
     font-size: 64px;
@@ -68,10 +74,13 @@ li{
     background-color: var(--blue-1);
 }
 .big-circle {
-    width: 84px;
-    height: 84px;
-    border-radius: 42px;
-    border: solid white 12px;
+    text-align: center;
+    line-height: 4em;
+    margin: .5em .5em;
+    width: 136px;
+    height: 136px;
+    border-radius: 68px;
+    border: solid white 8px;
 }
 .small-circle {
     width: 18px;
@@ -83,6 +92,10 @@ li{
     text-align: center;
     padding-left: 2px;
 }
+.content-main{
+    box-sizing: border-box;
+}
+
 /* ID Styling*/
 #header-row{
     background-color: var(--extra-light-gr);
@@ -104,17 +117,25 @@ li{
     text-align: center;
     margin-top: .5em;
 }
-#nav-spacer {
-    display: hidden;
+#title {
+    margin-top: 7em;
+    text-align: center;
+    justify-content: center;
+}
+.circle-icons {
+    justify-content: center;
 }
 /* Breakpoint Styles Below */
+@media screen and (max-width:576px) {
+
+}
 /* Small: 576-767px */
 @media screen and (min-width:576px) {
 ul {
     justify-content: center;
 }
 #nav-holder{
-    margin-top: -7em;
+    margin-top: -8em;
 }
 #nav-holder li {
     margin: 0 1em;
@@ -125,14 +146,31 @@ ul {
 #nav-holder li:nth-child(3){
     margin-left: 5em;
 }
+#title {
+    margin-top: 5em;
+}
+#mid-hr{
+    max-width: 66%;
+}
 }
 /* Medium: 768-991 px */
 @media screen and (min-width:768px) {
-
+#header-row{
+    align-content: center;
+}
+#co-name {
+    margin-top: .25em;
+    text-align: left;
+}
 /* Removing Small-Specific Margins for Nav Items*/
 
-ul {
+#nav-holder ul {
     justify-content: space-evenly;
+    margin-right: 1em;
+    margin-left: auto;
+}
+#nav-holder {
+    margin-top: 1.5em;
 }
 #nav-holder li {
     margin: 0 1em;
@@ -144,6 +182,18 @@ ul {
     margin-left: 1em;
 }
 
+/* Title Row Content */
+#title {
+    margin-top: 3em;
 }
-
-
+#mid-hr{
+    max-width: 100%;
+}
+}
+/* Large and XL: 992px+ */
+@media screen and (min-width:992px) {
+.content-main {
+    max-width: 992px;
+    margin: 0 auto;
+}
+}
