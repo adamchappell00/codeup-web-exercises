@@ -3,7 +3,7 @@
 
 
 // Tab Control for the Pizza Builder Form, Includes Listeners & Functions
-$('#crust-tab-button').on('click', function (e) {
+/*$('#crust-tab-button').on('click', function (e) {
     e.preventDefault()
     $('#crust-tab').tab('show')
 })
@@ -14,7 +14,7 @@ $('#cheese-sauce-tab-button').on('click', function (e) {
 $('#toppings-tab-button').on('click', function (e) {
     e.preventDefault()
     $('#toppings-tab').tab('show')
-})
+})*/
 /*
 var tab1 = function(){
    // var tab = new bootstrap.Tab(crustSizeTab)
