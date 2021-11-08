@@ -5,6 +5,11 @@ hr{
     border: 3px solid #555555;
     border-radius: 2px;
 }
+li {
+    list-style-type: none;
+    margin-left: -20px;
+    margin-right: 10px;
+}
 #big-line {
     border: 6px solid #820000;
     border-radius: 3px;
