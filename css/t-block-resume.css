@@ -1,4 +1,3 @@
-
 i {
     margin: 4px;
 }
@@ -10,10 +9,11 @@ hr{
     border: 6px solid #820000;
     border-radius: 3px;
 }
-#contact, #title-head {
-    justify-content: center;
-    text-align: center;
+@media screen and (min-width:992px){
+#projects-awards h4{
+    margin-bottom: 1.5em;
 }
-#awards {
-    margin-top: auto;
+#awards-line{
+    margin: 2em auto;
+}
 }
