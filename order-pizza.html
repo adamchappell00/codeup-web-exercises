@@ -34,17 +34,17 @@
         <h2>Build your own pizza!</h2>
         <ul class="nav nav-tabs" id="build-tabs" role="tablist">
             <li class="nav-item">
-                <a class="nav-link active" id="crust-tab-button" data-toggle="tab" href="#crust-tab"
+                <a class="nav-link active" id="crust-tab-anchor" data-toggle="tab" href="#crust-tab"
                 role="tab" aria-controls="crust-tab" aria-selected="true">
                 <span class="badge badge-secondary">1</span>Size and Crust</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" id="cheese-sauce-tab-button" data-toggle="tab" href="#cheese-sauce-tab"
+                <a class="nav-link" id="cheese-sauce-tab-anchor" data-toggle="tab" href="#cheese-sauce-tab"
                  role="tab" aria-controls="cheese-sauce-tab" aria-selected="false">
                 <span class="badge badge-secondary">2</span>Cheese and Sauce</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" id="toppings-tab-button" data-toggle="tab" href="#toppings-tab"
+                <a class="nav-link" id="toppings-tab-anchor" data-toggle="tab" href="#toppings-tab"
                 role="tab" aria-controls="toppings-tab" aria-selected="false">
                 <span class="badge badge-secondary">3</span>Toppings</a>
             </li>
@@ -53,8 +53,7 @@
     <!-- Build Your Pizza Tab Panel 1: Size and Crust-->
     <div class="tab-content" id="myTabContent">
         <form id="pizza-builder" method="POST" action="http://request-inspector.glitch.me/">
-            <!-- method="POST" action="http://request-inspector.glitch.me/"-->
-        <div class="tab-pane fade show active" id="crust-tab" role="tabpanel" aria-labelledby="crust-tab-button">
+        <div class="tab-pane fade show active" id="crust-tab" role="tabpanel" aria-labelledby="crust-tab-anchor">
             <div class="card">
                 <h5 class="card-body blue-swatch">Choose size and crust</h5>
                 <div class="card">
@@ -91,7 +90,7 @@
             </div>
         </div>
         <!-- Build Your Pizza Tab Panel 2: Cheese and Sauce-->
-        <div class="tab-pane fade" id="cheese-sauce-tab" role="tabpanel" aria-labelledby="cheese-sauce-tab-button">
+        <div class="tab-pane fade" id="cheese-sauce-tab" role="tabpanel" aria-labelledby="cheese-sauce-tab-anchor">
             <div class="card">
                 <h5 class="card-body blue-swatch">Choose Cheese and Sauce</h5>
                 <div class="card">
@@ -133,14 +132,14 @@
             </div>
         </div>
         <!-- Build Your Pizza Tab Panel 3: Toppings-->
-        <div class="tab-pane fade" id="toppings-tab" role="tabpanel" aria-labelledby="toppings-tab-button">
+        <div class="tab-pane fade" id="toppings-tab" role="tabpanel" aria-labelledby="toppings-tab-anchor">
             <div class="card">
                 <h5 class="card-body blue-swatch">Choose Toppings</h5>
                 <div class="card">
                     <h6 class="card-body grey-swatch"> Choose Meats</h6>
                     <div class="card radio-card">
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item">
+                            <li class="list-group-item"
                                 <input type="checkbox" name="meat" id="beef" value="beef">
                                 <label for="beef">Beef </label></li>
                             <li class="list-group-item">

@@ -2,7 +2,6 @@
 :root {
     --base-txt: #555555;
     --emphatic-txt: black;
-
 }
 * {
     box-sizing: border-box;
