@@ -7,14 +7,47 @@
 </head>
 <body>
 <h1>Intro to jQuery</h1>
+
+<h1 class="header" id="start-jquery2">Start Exercise 2!</h1>
+<div class="container" id="exercise-2">
+    <p class="codeup" id="my-intro">
+        Hello World!</p>
+    <p class="other-content" id="codeup">
+        This is the content of the exercise. I put this here mostly because, like my instructor, I also despise Lorem Ipsum.</p>
+    <ul class="codeup" id="my-list">
+        <li class="contents" id="li-one">Monday</li>
+        <li class="contents" id="li-two">Tuesday</li>
+        <li class="contents" id="li-three">Halfway</li>
+        <li class="contents" id="li-four">Thursday</li>
+        <li class="contents" id="li-five">Funday</li>
+    </ul>
+    <div class="codeup">
+        This is Just some extra stuff in a div.
+    </div>
+</div>
+
 <script>
 "use strict";
-
+/*  REMOVED FOR EXERCISE 2.2- Class Selectors
 $(document).ready(function() {
-
 alert("The Document has finished loading.");
-
+alert($('#li-one').html());
+*/
+/* REMOVED FOR EXERCISE 2.3- Element Selectors
+$(document).ready(function() {
+$('.codeup').css('border','1px solid red');
 });
+ */
+/* REMOVED FOR EVENTS EXERCISE
+$(document).ready(function() {
+$('li').css('font-size','20px');
+$("h1, p, li").css('background-color','yellow');
+$('h1').each(function(){
+    alert($(this).text());
+})
+});
+ */
+
 </script>
 </body>
 </html>
