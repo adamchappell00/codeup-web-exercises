@@ -2,7 +2,43 @@
 console.log(Date());
 
 //Leave Line 1-3 Above, Put Current Exercise Below!
-// Write a function named ‘sortByName’ that takes in an array of objects, and returns an array of objects in alphabetical order based on the name property.
+var bBallPlayers = [
+    {
+        name: "Hakeem Olajuwon",
+        height: 213
+    }, {
+        name: "Muggsy Bogues",
+        height: 160
+    }, {
+        name: "Chris Paul",
+        height: 183
+    }, {
+        name: "Bol Bol",
+        height: 218
+    }, {
+        name: "Moochie Norris",
+        height: 185
+    }, {
+        name: "Manu Ginobili",
+        height: 198
+    }
+];
+function giveMeShortest(arr){
+    var shortestHeight;
+    var shortestObj;
+    arr.forEach(function(person){
+        if(person.height < shortestHeight || typeof shortestHeight === 'undefined'){
+            shortestHeight = person.height;
+            shortestObj = person;
+        }
+    });
+    return shortestObj;
+}
+console.log(giveMeShortest(bBallPlayers));
+/* Previous Exerises Here
+--Tues November 9--
+
+--Weds November 3--
 var products = [
 {
     name: 'Playstation 5',
@@ -36,7 +72,6 @@ function sortByName(arr){
 }
 console.log(sortByName(products));
 
-/* Previous Exerises Here
 --Tues November 2--
 
 
