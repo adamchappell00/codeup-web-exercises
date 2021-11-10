@@ -130,6 +130,14 @@ li{
     justify-content: center;
 }
 /* Breakpoint Styles Below */
+@media screen and (max-width:476px) {
+    #circle-one{
+        margin-left: 1em;
+    }
+    #circle-two{
+        margin-right: 1em;
+    }
+}
 @media screen and (max-width:576px) {
 .circle-icons{
     margin: .1em .5em;
