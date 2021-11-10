@@ -2,6 +2,46 @@
 console.log(Date());
 
 //Leave Line 1-3 Above, Put Current Exercise Below!
+
+/* Name your character object, and complete the attack method. The attack method should use the myCharacter weapon
+object to deal damage to the enemy objects hit points. When the attack method has been executed, the hit points
+of the enemy object should reflect the damage done in the console. */
+var myCharacter = {
+    name: 'Dad',
+    hitPoints: 100,
+    class: 'Warrior',
+    abilities: {
+        attack: function(obj) {
+            console.log(myCharacter.name + " attacks " + obj.name + " (" +obj.hitPoints + "HP), with " +
+                myCharacter.weapon.name + " for " + myCharacter.weapon.damage + " damage!");
+            obj.hitPoints -= myCharacter.weapon.damage;
+            if(obj.hitPoints > 0){
+                console.log(obj.name + " now has " + obj.hitPoints + " HP");
+            } else {
+                console.log(obj.name + " has been slayed by " + myCharacter.name + "!");
+            }
+        },
+    },
+    magicPoints: 0,
+    weapon: {
+        name: 'Silver Sabre',
+        damage: 16,
+        type: 'sword'
+    }
+}
+var enemy = {
+    name: 'Savage Orc',
+    hitPoints: 100,
+    class: 'Warrior',
+    magicPoints: 0,
+}
+
+myCharacter.abilities.attack(enemy);
+
+/* Previous Exerises Here
+
+
+--Tues November 9--
 var bBallPlayers = [
     {
         name: "Hakeem Olajuwon",
@@ -35,8 +75,6 @@ function giveMeShortest(arr){
     return shortestObj;
 }
 console.log(giveMeShortest(bBallPlayers));
-/* Previous Exerises Here
---Tues November 9--
 
 --Weds November 3--
 var products = [
