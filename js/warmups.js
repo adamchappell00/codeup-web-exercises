@@ -7,7 +7,7 @@ console.log(Date());
 // randomEl([“rock”, “paper”, “scissors”, “lizard”, “Spock”]) // returns an element from the array.
 
 function randomEl(arr){
-    return arr[Math.floor(Math.random() * (arr.length-1))];
+    return arr[Math.floor(Math.random() * (arr.length))];
 }
 console.log(randomEl(["rock","paper","scissors","lizard","Spock"]));
 /* Previous Exerises Here
