@@ -30,6 +30,7 @@
     // My Code: IIFE set Interval - updating updateTimer every 1000 ms
 var intervalBomb = setInterval(function(){
     if(defused===true){
+        alert("Bomb Has Been Defused");
         clearInterval(intervalBomb);
     }
     updateTimer()
