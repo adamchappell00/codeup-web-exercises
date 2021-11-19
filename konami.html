@@ -44,6 +44,9 @@
             video.play();
             } else {
             alert("Konami Code Failed, try again!");
+            $('body').css('background-color','blue');
+            const audioFail = new Audio("mov/womp-womp.mp3");
+            audioFail.play();
             inputKeys = [];
         }
     };
