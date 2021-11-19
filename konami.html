@@ -2,14 +2,20 @@
 <html lang="en">
 <head>
     <title>Konami Code</title>
-
+    <style>
+        body {background-color: powderblue;}
+        video {margin: 0; display: none; width: 100%;}
+    </style>
 </head>
 <body>
-<h1>Konami Code</h1>
-
+<h1 id="konami-header">Konami Code</h1>
+<video id="myVideo">
+    <source src="mov/Fire_5_4K.mp4" type="video/mp4">
+</video>
 <script src="js/jquery-2.2.4.js"></script>
 <script>
     "use strict";
+    const video = document.getElementById('myVideo');
     const konami = [38,38,40,40,37,39,37,39,66,65,13];
     var inputKeys = [];
     $(document).keyup(function(event){
@@ -31,12 +37,23 @@
         }
         if(soFarSoGood){
             alert("You have added 30 Lives!");
-        } else {
+            $('#konami-header').css('display','none');
+            const audio = new Audio("mov/mortal-kombat-intro.mp3");
+            audio.play();
+            $('#myVideo').css('display','block');
+            video.play();
+            } else {
             alert("Konami Code Failed, try again!");
             inputKeys = [];
         }
     };
     console.log(inputKeys);
+  //  function playVideoAndAudio() {
+   //     var vid = document.getElementById('#myVideo');
+   //     var aud = document.getElementById('#myAudio');
+   //     vid.play;
+   //     aud.play;
+   // }
 </script>
 </body>
 </html>
