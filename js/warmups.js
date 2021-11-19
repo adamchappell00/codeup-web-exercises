@@ -3,14 +3,19 @@ console.log(Date());
 
 //Leave Line 1-3 Above, Put Current Exercise Below!
 
-/* Write a function in JavaScript that takes in an array, and returns a random element from the array. */
-// randomEl([“rock”, “paper”, “scissors”, “lizard”, “Spock”]) // returns an element from the array.
+
+
+/* Previous Exerises Here
+
+--Fri November 12--
+Write a function in JavaScript that takes in an array, and returns a random element from the array.
+randomEl([“rock”, “paper”, “scissors”, “lizard”, “Spock”]) // returns an element from the array.
 
 function randomEl(arr){
     return arr[Math.floor(Math.random() * (arr.length))];
 }
 console.log(randomEl(["rock","paper","scissors","lizard","Spock"]));
-/* Previous Exerises Here
+
 --Weds November 10--
  Name your character object, and complete the attack method. The attack method should use the myCharacter weapon
 object to deal damage to the enemy objects hit points. When the attack method has been executed, the hit points

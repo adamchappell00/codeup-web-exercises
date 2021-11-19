@@ -24,20 +24,40 @@
     <div class="codeup">
         This is Just some extra stuff in a div.
     </div>
+    <p> Here is some more 'paragraph element content.
+    </p>
+    <h1> Another Heading!</h1>
 </div>
 
 <script>
 "use strict";
+$('h1').click(function(e){
+    $(this).css('background-color', '#0FF');
+});
+$('p').dblclick(function(e){
+    $(this).css('font-size', '18px');
+});
+$('li').hover(
+    function() {
+        $(this).css('color', '#F00');
+    },
+    function() {
+        $(this).css('color', '#000');
+    }
+);
+// Alerts when Document Loading Complete
 /*  REMOVED FOR EXERCISE 2.2- Class Selectors
 $(document).ready(function() {
 alert("The Document has finished loading.");
 alert($('#li-one').html());
 */
+// .codeup class selector - adds a red border
 /* REMOVED FOR EXERCISE 2.3- Element Selectors
 $(document).ready(function() {
 $('.codeup').css('border','1px solid red');
 });
  */
+//  Alerts h1 content text, changes li font-size, and highlights h1,p,li elements
 /* REMOVED FOR EVENTS EXERCISE
 $(document).ready(function() {
 $('li').css('font-size','20px');
