@@ -5,6 +5,15 @@
     <title>JQuery FAQs</title>
     <script src="js/jquery-2.2.4.js"></script>
     <style>
+        img{height:248px;
+            margin-bottom: 1em}
+        .row{ display: flex;
+            flex-direction: row}
+        .column{
+            margin: 1em;
+            display: flex;
+            flex-direction: column;
+            max-width: 30%}
         .invisible {visibility: hidden}
     </style>
 </head>
@@ -49,6 +58,7 @@
 <br>
 <a id="toggler" href=""> Toggle Hidden</a>
 
+<!--Traversing Exercise #2 Below -->
 <h3> Big Bend National Park</h3>
 <ul>
     <li>The stars at night, are big and bright! West Texas has some of the best stargazing in the country</li>
@@ -73,6 +83,23 @@
     <li>I still have not made it to this park, but it is on the list!</li>
 </ul>
 <button id="li-yellow">Last li Yellow!</button>
+<br><br>
+<!-- Bonus for Traversing Exercise-->
+<div class="row">
+    <div class="column">
+        <img id="left-img">
+        <button id="left-btn">Left</button>
+    </div>
+    <div class="column">
+        <img id="center-img">
+        <button id="center-btn">Center</button>
+    </div>
+    <div class="column">
+        <img id="right-img">
+        <button id="right-btn">Right</button>
+    </div>
+</div>
+
 
 <script>
     $('dd').addClass('invisible');
@@ -84,6 +111,53 @@
         event.preventDefault();
         $(this).css({'background-color': 'yellow'});
     });
+    /* Traversing Exercise Addition Below */
+    $('#li-yellow').click(function(event){
+        event.preventDefault();
+        $('ul').each(function (){
+            $(this).children().last().css('background-color','yellow');
+        });
+    });
+    $('h3').click(function(event){
+        event.preventDefault();
+        $(this).next().css('font-weight','bold');
+    });
+    $('li').click(function(event){
+       $(this).parent().children().first().css('background-color','blue');
+    });
+    /* Bonus */
+    $('#left-img').attr('src', 'img/tstark.png').css('border', '5px solid red');
+    $('#center-img').attr('src', 'img/strange.png').css('border', '5px solid yellow');
+    $('#right-img').attr('src', 'img/stan.png').css('border', '5px solid blue');
+
+    $('#left-btn').click(function(event){
+        event.preventDefault();
+        var currentSrc = $('#left-img').attr('src');
+        var nextSrc = $('#center-img').attr('src');
+        $('#left-img').attr('src', nextSrc);
+        $('#center-img').attr('src', currentSrc);
+    });
+    $('#right-btn').click(function(event){
+        event.preventDefault();
+        var currentSrc = $('#right-img').attr('src');
+        var nextSrc = $('#center-img').attr('src');
+        $('#right-img').attr('src', nextSrc);
+        $('#center-img').attr('src', currentSrc);
+    });
+    $('#center-btn').click(function(event){
+        event.preventDefault();
+        var currentSrc = $('#center-img').attr('src');
+        var leftOrRight = Math.floor(Math.random()*2);
+        if( leftOrRight === 0){
+            var nextSrc = $('#left-img').attr('src');
+            $('#left-img').attr('src', currentSrc);
+        } else {
+            var nextSrc = $('#right-img').attr('src');
+            $('#right-img').attr('src', currentSrc);
+        }
+        $('#center-img').attr('src', nextSrc);
+    });
+
 </script>
 </body>
 </html>

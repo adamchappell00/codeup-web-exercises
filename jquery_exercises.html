@@ -26,7 +26,7 @@
     </div>
     <p> Here is some more 'paragraph element content.
     </p>
-    <h1> Another Heading!</h1>
+    <h1 id="party-on"> Get Lit!</h1>
 </div>
 
 <script>
@@ -45,6 +45,15 @@ $('li').hover(
         $(this).css('color', '#000');
     }
 );
+var raveOn = function(){
+    setInterval(colorRandom,500);
+}
+var colorRandom = function(){
+        var colors = ['red','orange','yellow','green','blue', 'indigo', 'violet'];
+        var random = (Math.floor(Math.random() * colors.length));
+        $('body').css('background-color', colors[random]);
+}
+$('#party-on').click(raveOn);
 // Alerts when Document Loading Complete
 /*  REMOVED FOR EXERCISE 2.2- Class Selectors
 $(document).ready(function() {
