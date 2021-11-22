@@ -42,21 +42,15 @@
             audio.play();
             $('#myVideo').css('display','block');
             video.play();
-            } else {
+        } else {
             alert("Konami Code Failed, try again!");
             $('body').css('background-color','blue');
             const audioFail = new Audio("mov/womp-womp.mp3");
             audioFail.play();
             inputKeys = [];
         }
-    };
+    }
     console.log(inputKeys);
-  //  function playVideoAndAudio() {
-   //     var vid = document.getElementById('#myVideo');
-   //     var aud = document.getElementById('#myAudio');
-   //     vid.play;
-   //     aud.play;
-   // }
 </script>
 </body>
 </html>

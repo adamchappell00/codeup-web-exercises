@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JQuery FAQs</title>
+    <script src="js/jquery-2.2.4.js"></script>
+    <style>
+        .invisible {visibility: hidden}
+    </style>
+</head>
+<body>
+<p>National Park FAQs:</p>
+<dl>
+    <dt>Park Service Created in 1916</dt>
+        <dd>President Woodrow Wilson signed the “Organic Act”, creating the National Park Service,in August 1916.</dd>
+
+    <dt>Teddy Roosevelt doubled their Number</dt>
+        <dd>Theodore Roosevelt doubled the number of parks within the National Park system while President from 1901 to
+        1909. HE Also signed the Antiquities Act of June 8, 1906, Enabling himself and future Presidents to
+        proclaim historic landmarks, structures, and objects of historic or scientific interest as national monuments.</dd>
+
+    <dt>The Biggest Living Things! </dt>
+        <dd>National parks are home to life on a big scale: Sequoia trees are some of the world's largest living things,
+        and Alaskan brown bears are some of the world's largest carnivores.</dd>
+
+    <dt>Highest Peak</dt>
+        <dd>Mount McKinley in the Alaska Range of Denali National Park is the highest point in the national parks at 20,302 feet.</dd>
+
+    <dt>Deepest Cave</dt>
+        <dd>Carlsbad Caverns National Park in New Mexico is home to the nation's deepest cave, which is 1,593 feet deep.</dd>
+
+    <dt>Deepest Lake </dt>
+        <dd>At 1,932 feet deep, Crater Lake National Park in Oregon is the deepest lake in the U.S.</dd>
+
+    <dt>Old Yeller</dt>
+        <dd>Yellowstone National Park (in Wyoming, Idaho, and Montana) is the oldest U.S. national park, founded in 1872.</dd>
+
+    <dt>Wondrous </dt>
+        <dd>The Grand Canyon, in Grand Canyon National Park in Arizona, is known as one of the Seven Natural Wonders of the World.</dd>
+
+    <dt>Take Care of your feet</dt>
+        <dd>There are over 18,000 miles of trails in the national parks! This includes 2,000 miles of the Appalachian
+        National Scenic Trail that stretches from Maine to Georgia.</dd>
+
+    <dt>Too Cold! </dt>
+        <dd>Alaska is home to one of the least visited national parks: Kobuk Valley National Park receives just 3,000
+        visitors per year, and lies within the Arctic Circle </dd>
+</dl>
+<br>
+<a id="toggler" href=""> Toggle Hidden</a>
+<script>
+    $('dd').addClass('invisible');
+    $('#toggler').click(function(event){
+        event.preventDefault();
+        $('dd').toggleClass('invisible');
+    });
+    $('dt').click(function(event){
+        event.preventDefault();
+        $(this).css({'background-color': 'yellow'});
+    });
+</script>
+</body>
+</html>
