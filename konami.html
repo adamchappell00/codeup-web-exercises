@@ -5,10 +5,22 @@
     <style>
         body {background-color: powderblue;}
         video {margin: 0; display: none; width: 100%;}
+        #konami-header{text-align: center;}
+        #entered-code{display: flex; justify-content: center; flex-direction: row; border: 4px solid yellow;
+            background-color: white}
+        .button{width: 84px; height: 84px; background-size: 84px 84px;}
+        .a{background-image: url("img/a.png")}
+        .b{background-image: url("img/b.png")}
+        .left{background-image: url("img/left.png")}
+        .right{background-image: url("img/right.png")}
+        .up{background-image: url("img/up.png")}
+        .down{background-image: url("img/down.png")}
+        .enter{background-image: url("img/enter.png")}
     </style>
 </head>
 <body>
 <h1 id="konami-header">Konami Code</h1>
+<h2 id="entered-code"></h2>
 <video id="myVideo">
     <source src="mov/Fire_5_4K.mp4" type="video/mp4">
 </video>
@@ -23,6 +35,11 @@
     });
     $(document).keyup(function(event) {
         inputKeys.push(event.keyCode);
+        var html= '';
+        inputKeys.forEach(function(key){
+            html += renderKey(key);
+            $('#entered-code').html(html);
+        } )
         if(inputKeys.length === 11){
             checkKonami();
         }
@@ -48,9 +65,37 @@
             const audioFail = new Audio("mov/womp-womp.mp3");
             audioFail.play();
             inputKeys = [];
+            $('#entered-code').html('');
         }
     }
     console.log(inputKeys);
+    function renderKey(key){
+        var html = ''
+        switch(key){
+            case 37:
+                html = '<div class="button left"></div>';
+                break;
+            case 38:
+                html = '<div class="button up"></div>';
+                break;
+            case 39:
+                html = '<div class="button right"></div>';
+                break;
+            case 40:
+                html = '<div class="button down"></div>';
+                break;
+            case 65:
+                html = '<div class="button a"></div>';
+                break;
+            case 66:
+                html = '<div class="button b"></div>';
+                break;
+            case 13:
+                html = '<div class="button enter"></div>';
+                break;
+        }
+        return html;
+    }
 </script>
 </body>
 </html>
