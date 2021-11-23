@@ -19,7 +19,7 @@
         </thead>
         <tbody id="insertProducts"></tbody>
     </table>
-
+<button id="refresh">Refresh Inventory</button>
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 
 <script>
@@ -27,21 +27,33 @@
     "use strict";
         // TODO: DONE
         //  Create an AJAX GET request for the file under data/inventory.json
-        $.get("/data/inventory.json",{
+    $.get("/data/inventory.json",{
     }).done(function(data) {
-        console.log(data);
         // do something with the data
+        dataLoaded(data);
+    });
+    function dataLoaded(data){
+        console.log(data);
+        console.log("Inventory Updated");
         let renderedHtml = '';
         data.forEach(function(object){
             renderedHtml += renderObj(object);
         });
         $('#insertProducts').html(renderedHtml)
-    });
+    }
     function renderObj(object){
         var objectHtml = '<tr>'+ '<td>' + object.title + '</td>' + '<td>'+ object.quantity + '</td>' +
             '<td>' + object.price + '</td>' + '<td>' + object.categories + '</td>' + '</tr>';
         return objectHtml;
     }
+
+    $('#refresh').click(function(){
+        $.get("/data/inventory.json",{
+        }).done(function(data) {
+            dataLoaded(data);
+        });
+    });
+
     // TODO: DONE
     //  Take the data from inventory.json and append it to the products table
     //       HINT: Your data should come back as a JSON object; use console.log() to inspect
