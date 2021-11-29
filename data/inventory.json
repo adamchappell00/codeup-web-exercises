@@ -11,7 +11,8 @@
         "quantity": 5,
         "categories": [
             "tool",
-            "powered"
+            "powered",
+            "electric"
         ],
         "price": 100
     }, {
@@ -30,5 +31,31 @@
             "tool"
         ],
         "price": 10
+    },
+    {
+        "title": "Sledgehammer",
+        "quantity": 5,
+        "categories": [
+            "tool"
+        ],
+        "price": 40
+    },
+    {
+        "title": "circular saw",
+        "quantity": 8,
+        "categories": [
+            "tool",
+            "powered",
+            "electric"
+        ],
+        "price": 40
+    },
+    {
+        "title": "file set",
+        "quantity": 15,
+        "categories": [
+            "tool"
+        ],
+        "price": 40
     }
 ]

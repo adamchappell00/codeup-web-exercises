@@ -2,9 +2,20 @@
 <html>
 <head>
     <title>Online Store</title>
-    <style>
-        th, td { padding: 0.25em; text-align: center}
-    </style>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Freelancer - Start Bootstrap Theme</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
 </head>
 <body>
     <h1>My Tool Store</h1>
@@ -19,7 +30,7 @@
         </thead>
         <tbody id="insertProducts"></tbody>
     </table>
-
+<button id="refresh">Refresh Inventory</button>
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 
 <script>
@@ -27,21 +38,33 @@
     "use strict";
         // TODO: DONE
         //  Create an AJAX GET request for the file under data/inventory.json
-        $.get("/data/inventory.json",{
+    $.get("/data/inventory.json",{
     }).done(function(data) {
-        console.log(data);
         // do something with the data
+        dataLoaded(data);
+    });
+    function dataLoaded(data){
+        console.log(data);
+        console.log("Inventory Updated");
         let renderedHtml = '';
         data.forEach(function(object){
             renderedHtml += renderObj(object);
         });
         $('#insertProducts').html(renderedHtml)
-    });
+    }
     function renderObj(object){
         var objectHtml = '<tr>'+ '<td>' + object.title + '</td>' + '<td>'+ object.quantity + '</td>' +
             '<td>' + object.price + '</td>' + '<td>' + object.categories + '</td>' + '</tr>';
         return objectHtml;
     }
+
+    $('#refresh').click(function(){
+        $.get("/data/inventory.json",{
+        }).done(function(data) {
+            dataLoaded(data);
+        });
+    });
+
     // TODO: DONE
     //  Take the data from inventory.json and append it to the products table
     //       HINT: Your data should come back as a JSON object; use console.log() to inspect

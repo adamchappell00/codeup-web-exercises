@@ -102,53 +102,55 @@
 
 
 <script>
+$(document).ready()
+{
     $('dd').addClass('invisible');
-    $('#toggler').click(function(event){
+    $('#toggler').click(function (event) {
         event.preventDefault();
         $('dd').toggleClass('invisible');
     });
-    $('dt').click(function(event){
+    $('dt').click(function (event) {
         event.preventDefault();
         $(this).css({'background-color': 'yellow'});
     });
     /* Traversing Exercise Addition Below */
-    $('#li-yellow').click(function(event){
+    $('#li-yellow').click(function (event) {
         event.preventDefault();
-        $('ul').each(function (){
-            $(this).children().last().css('background-color','yellow');
+        $('ul').each(function () {
+            $(this).children().last().css('background-color', 'yellow');
         });
     });
-    $('h3').click(function(event){
+    $('h3').click(function (event) {
         event.preventDefault();
-        $(this).next().css('font-weight','bold');
+        $(this).next().css('font-weight', 'bold');
     });
-    $('li').click(function(event){
-       $(this).parent().children().first().css('background-color','blue');
+    $('li').click(function (event) {
+        $(this).parent().children().first().css('background-color', 'blue');
     });
     /* Bonus */
     $('#left-img').attr('src', 'img/tstark.png').css('border', '5px solid red');
     $('#center-img').attr('src', 'img/strange.png').css('border', '5px solid yellow');
     $('#right-img').attr('src', 'img/stan.png').css('border', '5px solid blue');
 
-    $('#left-btn').click(function(event){
+    $('#left-btn').click(function (event) {
         event.preventDefault();
         var currentSrc = $('#left-img').attr('src');
         var nextSrc = $('#center-img').attr('src');
         $('#left-img').attr('src', nextSrc);
         $('#center-img').attr('src', currentSrc);
     });
-    $('#right-btn').click(function(event){
+    $('#right-btn').click(function (event) {
         event.preventDefault();
         var currentSrc = $('#right-img').attr('src');
         var nextSrc = $('#center-img').attr('src');
         $('#right-img').attr('src', nextSrc);
         $('#center-img').attr('src', currentSrc);
     });
-    $('#center-btn').click(function(event){
+    $('#center-btn').click(function (event) {
         event.preventDefault();
         var currentSrc = $('#center-img').attr('src');
-        var leftOrRight = Math.floor(Math.random()*2);
-        if( leftOrRight === 0){
+        var leftOrRight = Math.floor(Math.random() * 2);
+        if (leftOrRight === 0) {
             var nextSrc = $('#left-img').attr('src');
             $('#left-img').attr('src', currentSrc);
         } else {
@@ -157,7 +159,7 @@
         }
         $('#center-img').attr('src', nextSrc);
     });
-
+}
 </script>
 </body>
 </html>
