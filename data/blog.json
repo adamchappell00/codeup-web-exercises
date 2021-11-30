@@ -16,5 +16,15 @@
             "sugar"
         ],
         "date": "February 14, 2015"
+    },
+    {
+        "title": "Do You Even Blog?",
+        "content": "Sometimes I do, but I don't even know where to start. Taco Tuesday is nice. Is winter here yet? ",
+        "categories": [
+            "writing",
+            "thinking",
+            "language"
+        ],
+        "date": "November 14, 2021"
     }
 ]
