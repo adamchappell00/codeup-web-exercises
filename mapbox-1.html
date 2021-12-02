@@ -24,18 +24,17 @@
     });
     $( document ).ready(function() {
         setTimeout(function () {
-            const map2 = new mapboxgl.Map({
-                container: 'map', // container ID
-                style: 'mapbox://styles/mapbox/satellite-v9', // style URL
-                center: [-97.04, 32.899], // starting position [lng, lat]
-                zoom: 12 // starting zoom 32.899800072771534, -97.04007771054418
+            map.flyTo({
+                center: [-97.04, 32.899],
+                zoom: 12,
+                speed: 1,
             });
+            map.setStyle('mapbox://styles/mapbox/satellite-v9',);
         }, 5000);
         $('#zoom-in').click(function(){
-            map2.zoom += 1;
+            map.zoomIn({duration: 1000});
         });
     });
-
 </script>
 </body>
 </html>
