@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mapbox Exercises 1</title>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css' rel='stylesheet' />
+</head>
+<body>
+
+
+<div id='map' style='width: 400px; height: 300px;'></div>
+<button id="zoom-in">Zoom In</button>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+        crossorigin="anonymous"></script>
+<script src= "js/keys.js" ></script>
+<script>
+    mapboxgl.accessToken = MAPBOX_KEY;
+    const map = new mapboxgl.Map({
+        container: 'map', // container ID
+        style: 'mapbox://styles/mapbox/streets-v11', // style URL
+        center: [-98.468, 29.531], // starting position [lng, lat]
+        zoom: 12 // starting zoom 32.899800072771534, -97.04007771054418
+    });
+    $( document ).ready(function() {
+        setTimeout(function () {
+            const map2 = new mapboxgl.Map({
+                container: 'map', // container ID
+                style: 'mapbox://styles/mapbox/satellite-v9', // style URL
+                center: [-97.04, 32.899], // starting position [lng, lat]
+                zoom: 12 // starting zoom 32.899800072771534, -97.04007771054418
+            });
+        }, 5000);
+        $('#zoom-in').click(function(){
+            map2.zoom += 1;
+        });
+    });
+
+</script>
+</body>
+</html>
