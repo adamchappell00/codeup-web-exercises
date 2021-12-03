@@ -7,12 +7,37 @@
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css' rel='stylesheet' />
 
+
 </head>
 <body>
 
 <div id='map' style='width: 720px; height: 480px;'></div>
 <script src= "js/keys.js" ></script>
+<script src="js/mapbox-geocoder-utils.js"></script>
 <script>
+    var restaurants = [
+    {   name: "Andale Restaurant and Cantina",
+        type: "Mexican",
+        address: "9201 Gateway Blvd W, El Paso, TX 79925",
+        information: "Yum",
+        favorites:  "Tacos Andale: Tacos al Pastor with Pablano Cream Sauce",
+        details: "Music, atmosphere, and obviously great food"
+    },
+    {   name: "Hayashi Hibachi",
+        type: "Asian Hibachi",
+        address: "10501 Gateway Blvd W, El Paso, TX 79925",
+        information: "Yum",
+        favorites:  "Great Steak, Chicken, and Shrimp, The Dinner for Two mixes all the options and sampling it all",
+        details: "Great Chefs and performance, fun to go as a group or as a couple"
+    },
+    {   name: "Sorrento",
+        type: "Italian",
+        address: "5325 Dyer St, El Paso, TX 79904",
+        information: "Yum",
+        favorites:  "The Pasta is great, but the Garlic chicken and Chicken Jerusalem are the best!",
+        details: "Small, soft ambience, intimate feel"
+
+    }];
     mapboxgl.accessToken = MAPBOX_KEY;
     const map = new mapboxgl.Map({
         container: 'map', // container ID
@@ -20,13 +45,31 @@
         center: [-106.4891, 31.7638], // starting position [lng, lat] 31.766961711918697, -106.36485834041702
         zoom: 10 // starting zoom
     });
-    const AndaleMarker = new mapboxgl.Marker()
-        .setLngLat([-106.365082, 31.766131])
-        .addTo(map);
-    const statuePopup = new mapboxgl.Popup()
-        .setLngLat([-106.365082, 31.766131])
-        .setHTML('Andale Restaurant and Cantina')
-        .addTo(map);
+   // const markers = document.createElement('div');
+   // markers.className = 'marker';
+    restaurants.forEach(function addMapObjects(object) {
+        geocode(object.address, MAPBOX_KEY).then(function (result) {
+            console.log(result);
+            const newMarker = new mapboxgl.Marker()
+                .setLngLat(result)
+                .addTo(map)
+                .setPopup(new mapboxgl.Popup()
+                    .setLngLat(result)
+                    .setHTML(object.name)
+                    .addTo(map)
+
+                )
+                .togglePopup();
+
+
+        });
+    });
+
+
+
+
+
+
 </script>
 </body>
 </html>
