@@ -14,16 +14,16 @@
             display: flex;
             justify-content: center;
         }
-        label, select {
+        label, select, input, button {
             margin: 1em !important;
         }
     </style>
 
 </head>
 <body>
-
+<!-- -->
 <div id='map' style='width: 720px; height: 480px;'></div>
-
+<!-- -->
 <div class="other">
     <label for="zoom">Zoom Level</label>
     <select id="zoom">
@@ -33,12 +33,24 @@
         <option value="20">20</option>
     </select>
 </div>
+<!-- -->
+<div class="other">
+    <button id="hide-markers">Hide All Markers</button>
+</div>
+<!-- -->
+<div class="other">
+    <label for="usr-loc">Location Search:</label>
+    <input id="usr-loc" name="location" type="text" placeholder="Enter An Address">
+    <button id="search-btn">Go!</button>
+</div>
 
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
         crossorigin="anonymous"></script>
 <script src= "js/keys.js" ></script>
 <script src="js/mapbox-geocoder-utils.js"></script>
 <script>
+
+    // Defining each Restaurant as an Object
     var restaurants = [
     {   name: "Andale Restaurant and Cantina",
         type: "Mexican",
@@ -69,8 +81,8 @@
         center: [-106.4891, 31.7638], // starting position [lng, lat] 31.766961711918697, -106.36485834041702
         zoom: 10 // starting zoom
     });
-   // const markers = document.createElement('div');
-   // markers.className = 'marker';
+// creating a forEach with a callback function to add a marker and popup on each restaurant location using geocoding
+//
     restaurants.forEach(function addMapObjects(object) {
         geocode(object.address, MAPBOX_KEY).then(function (result) {
             console.log(result);
@@ -79,7 +91,8 @@
                 .addTo(map)
                 .setPopup(new mapboxgl.Popup()
                     .setLngLat(result)
-                    .setHTML(object.name)
+                    .setHTML('<p><b>' + object.name + '</b><br><em>' + object.type + '</em><br> Favorites: ' + object.favorites +
+                     '<br> Atmosphere: ' +  object.details +'</p>')
                     .addTo(map)
 
                 )
