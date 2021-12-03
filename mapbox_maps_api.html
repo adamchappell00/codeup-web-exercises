@@ -6,12 +6,36 @@
 
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css' rel='stylesheet' />
-
+    <style>
+        *{
+            margin: 1em auto;
+        }
+        .other{
+            display: flex;
+            justify-content: center;
+        }
+        label, select {
+            margin: 1em !important;
+        }
+    </style>
 
 </head>
 <body>
 
 <div id='map' style='width: 720px; height: 480px;'></div>
+
+<div class="other">
+    <label for="zoom">Zoom Level</label>
+    <select id="zoom">
+        <option value="5">5</option>
+        <option value="10" selected>10</option>
+        <option value="15">15</option>
+        <option value="20">20</option>
+    </select>
+</div>
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+        crossorigin="anonymous"></script>
 <script src= "js/keys.js" ></script>
 <script src="js/mapbox-geocoder-utils.js"></script>
 <script>
@@ -60,11 +84,11 @@
 
                 )
                 .togglePopup();
-
-
         });
     });
-
+    $('#zoom').on('change', function(){
+        map.zoomTo($(this).val())
+    });
 
 
 
