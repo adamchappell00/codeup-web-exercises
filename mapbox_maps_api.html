@@ -10,16 +10,23 @@
 </head>
 <body>
 
-<div id='map' style='width: 400px; height: 300px;'></div>
+<div id='map' style='width: 720px; height: 480px;'></div>
 <script src= "js/keys.js" ></script>
 <script>
     mapboxgl.accessToken = MAPBOX_KEY;
     const map = new mapboxgl.Map({
         container: 'map', // container ID
         style: 'mapbox://styles/mapbox/streets-v11', // style URL
-        center: [-74.5, 40], // starting position [lng, lat]
-        zoom: 9 // starting zoom
+        center: [-106.4891, 31.7638], // starting position [lng, lat] 31.766961711918697, -106.36485834041702
+        zoom: 10 // starting zoom
     });
+    const AndaleMarker = new mapboxgl.Marker()
+        .setLngLat([-106.365082, 31.766131])
+        .addTo(map);
+    const statuePopup = new mapboxgl.Popup()
+        .setLngLat([-106.365082, 31.766131])
+        .setHTML('Andale Restaurant and Cantina')
+        .addTo(map);
 </script>
 </body>
 </html>
