@@ -18,7 +18,8 @@
         units: "imperial",
         appid: OPEN_WEATHER_KEY
     }).done(function(data){
-         console.log('5 day forecast',data);
+         console.log(data);
+         console.log(new Date(data.daily[0].dt * 1000));
     });
 </script>
 </body>
