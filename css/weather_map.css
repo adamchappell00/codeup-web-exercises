@@ -73,3 +73,6 @@ h2{
     width: 720px;
     height: 480px;
 }
+#marker-loc{
+    text-align: center;
+}
