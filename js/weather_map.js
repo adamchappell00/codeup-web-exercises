@@ -3,6 +3,9 @@ mapboxgl.accessToken = MAPBOX_KEY;
 // Default Location at Codeup San Antonio
 var myLocation = "600 Navarro Street, San Antonio, Texas";
 var myCoords = [-98.48527, 29.423017];
+var coordsObject = {lat: myCoords[1], lng: myCoords[0]};
+// Initial location display in the heading
+$('#forecast-location').html("Current Location: "+ myLocation)
 // Initial Call to render the weather with default location
 getTheWeather();
 
@@ -22,14 +25,20 @@ const myMarker = new mapboxgl.Marker()
 myMarker.on('dragend', function(){
     // Parsing the marker location into usable data
     var newLocation = myMarker.getLngLat();
-    var newLng = newLocation.lng;
-    var newLat = newLocation.lat;
-    // reassigning the value of the location
-    myCoords = [newLng, newLat];
-    //  Add the new Lat and Long location to the HTML below the map
-    $('#marker-loc').html("Current Location- Lat: " + newLat +", Long:"+ newLng);
+    // reassigning the value of the location for reverse Geocoding (coordsObject) then Weather Update(myCoords)
+    coordsObject.lat = newLocation.lat;
+    coordsObject.lng = newLocation.lng;
+    myCoords = [newLocation.lng, newLocation.lat];
     // Call the update function for the weather
     getTheWeather();
+    //  Add the new Lat and Long location to the HTML below the map
+    $('#marker-loc').html("Current Location- Lat: " + newLocation.lat +", Long:"+ newLocation.lng);
+    //
+    reverseGeocode(coordsObject, MAPBOX_KEY).then(function (result){
+        myLocation = result;
+        $('#forecast-location').html("Current Location: "+ myLocation)
+        console.log(result);
+    });
 });
 
 // Function to get the Weather with nested get request
@@ -75,8 +84,9 @@ function renderFiveDay(data) {
     fiveDayHtml += '</div>'
     // Setting the parent container to display the string built for all 5 days
     $('#five-day').html(fiveDayHtml);
+
 };
-//$('#')
+//$('#search').
 
 // convertDay() and convertMonth() will return the Day of the Week and Month as a string, respectively
 function convertDay(num){

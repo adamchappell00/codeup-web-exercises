@@ -60,10 +60,9 @@ h2{
     justify-content: space-between;
     margin: .25em;
 }
-#forecast-location, label, input{
+#forecast-location, label, input, button{
     display: inline;
-    font-size: 32px;
-    line-height: 48px;
+    font-size: 24px;
     margin: .5em;
 }
 
