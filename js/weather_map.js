@@ -19,3 +19,11 @@ $.get("https://api.openweathermap.org/data/2.5/onecall", {
     $('#five-day').html(fiveDayHtml);
     console.log(new Date(data.daily[0].dt * 1000));
 });
+
+mapboxgl.accessToken = MAPBOX_KEY;
+const map = new mapboxgl.Map({
+    container: 'map', // container ID
+    style: 'mapbox://styles/mapbox/streets-v11', // style URL
+    center: [-98.48527, 29.423017], // starting position [lng, lat] 31.766961711918697, -106.36485834041702
+    zoom: 10 // starting zoom
+});
