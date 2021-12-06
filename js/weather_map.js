@@ -14,7 +14,7 @@ const map = new mapboxgl.Map({
     container: 'map',                               // container ID
     style: 'mapbox://styles/mapbox/streets-v11',    // style URL
     center: myCoords,                               // starting position
-    zoom: 10                                        // starting zoom
+    zoom: 12                                        // starting zoom
 });
 // Add a Marker based on myLocation
 const myMarker = new mapboxgl.Marker()
@@ -29,15 +29,20 @@ myMarker.on('dragend', function(){
     coordsObject.lat = newLocation.lat;
     coordsObject.lng = newLocation.lng;
     myCoords = [newLocation.lng, newLocation.lat];
-    // Call the update function for the weather
+    // Now Recenter the Map with a fly function to the New Coordinates
+    map.flyTo({
+        center: myCoords,
+        speed: 1,
+        zoom: 12
+    });
+    // Now Call the update function for the weather
     getTheWeather();
     //  Add the new Lat and Long location to the HTML below the map
     $('#marker-loc').html("Current Location- Lat: " + newLocation.lat +", Long:"+ newLocation.lng);
-    //
+    // reverse geocode the location to display it as a string in the current location heading
     reverseGeocode(coordsObject, MAPBOX_KEY).then(function (result){
         myLocation = result;
         $('#forecast-location').html("Current Location: "+ myLocation)
-        console.log(result);
     });
 });
 
@@ -86,7 +91,26 @@ function renderFiveDay(data) {
     $('#five-day').html(fiveDayHtml);
 
 };
-//$('#search').
+$('#search-btn').click(function(){
+    geocode($('#search').val(), MAPBOX_KEY).then(function(result){
+        console.log(result);
+        myCoords = result;
+        myMarker.setLngLat(myCoords);
+        map.flyTo({
+            center: myCoords,
+            zoom: 12,
+            speed: 1,
+        });
+        getTheWeather();
+        coordsObject.lat = result[1];
+        coordsObject.lng = result[0];
+        reverseGeocode(coordsObject, MAPBOX_KEY).then(function (result){
+            myLocation = result;
+            $('#forecast-location').html("Current Location: "+ myLocation)
+            console.log(result);
+        });
+    });
+});
 
 // convertDay() and convertMonth() will return the Day of the Week and Month as a string, respectively
 function convertDay(num){
