@@ -4,6 +4,10 @@ mapboxgl.accessToken = MAPBOX_KEY;
 var myLocation = "600 Navarro Street, San Antonio, Texas";
 var myCoords = [-98.48527, 29.423017];
 var coordsObject = {lat: myCoords[1], lng: myCoords[0]};
+// The following arrays allow for display of the contained strings rather than the date as a Number
+const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+const months = ["January","February","March","April","May","June","July","September","October","November","December"];
+
 // Initial location display in the heading
 $('#forecast-location').html("Current Location: "+ myLocation)
 // Initial Call to render the weather with default location
@@ -72,7 +76,7 @@ function renderFiveDay(data) {
         // Initialize the parent div for each "Day", with additional divs inside for each piece of weather data
         fiveDayHtml += '<div class="day">' +
             // Date information passed to functions to convert them from numeric values to names of days and months
-            '<div class="date">' + convertDay(currentDay) + '<br>' + currentDate + " " + convertMonth(currentMonth) + '</div>' +
+            '<div class="date">' + days[currentDay] + '<br>' + currentDate + " " + convertMonth(currentMonth) + '</div>' +
             // Temperature: High and Low
             '<div class="temp">High: ' + data.daily[i].temp.max.toFixed() + '   /   Low: ' + data.daily[i].temp.min.toFixed() + '</div>' +
             // Main Weather: type and description , currently set to [0] which describes the beginning of the day
@@ -89,7 +93,6 @@ function renderFiveDay(data) {
     fiveDayHtml += '</div>'
     // Setting the parent container to display the string built for all 5 days
     $('#five-day').html(fiveDayHtml);
-
 };
 $('#search-btn').click(function(){
     geocode($('#search').val(), MAPBOX_KEY).then(function(result){
@@ -112,25 +115,7 @@ $('#search-btn').click(function(){
     });
 });
 
-// convertDay() and convertMonth() will return the Day of the Week and Month as a string, respectively
-function convertDay(num){
-    switch(num){
-        case 0:
-            return "Sunday";
-        case 1:
-            return "Monday";
-        case 2:
-            return "Tuesday";
-        case 3:
-            return "Wednesday";
-        case 4:
-            return "Thursday";
-        case 5:
-            return "Friday";
-        case 6:
-            return "Saturday";
-    }
-};
+// convertMonth() will return the Month as a string
 function convertMonth(num){
     switch(num){
         case 0:

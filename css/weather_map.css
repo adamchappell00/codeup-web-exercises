@@ -4,7 +4,7 @@
     margin: 0;
 }
 body{
-    background-color: lightgray;
+    background-color: wheat;
 }
 header{
     padding: .25em 1em;
@@ -21,10 +21,8 @@ h2{
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    width: 98%;
+    width: 100%;
     margin: .25em auto;
-    background-color: grey;
-    border-radius: 8px;
 }
 #five-day{
     display: flex;
@@ -49,8 +47,8 @@ h2{
 }
 .weather-icon{
     margin: 0 auto;
-    width: 82px;
-    height: 82px;
+    width: 64px;
+    height: 64px;
 }
 #title {
     font-size: 24px;
