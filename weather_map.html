@@ -11,16 +11,15 @@
 <body>
     <header>
         <div id="title">My Weather Map</div>
-
-    </header>
-    <div id="location-subheader">
+        <!-- Search Location: Moves Marker, Map Center, and updates display through geo+reverse geocoding address-->
         <div>
             <label for="search">Search</label>
             <input id="search" type="text">
-            <button id="srch-btn">Go</button>
+            <button id="search-btn">Go</button>
         </div>
+        <!-- Reverse Geocoded Location Display-->
         <div id="forecast-location"></div>
-    </div>
+    </header>
     <!-- 5-DAY FORECAST CONTAINER-->
     <div class="box">
         <h2> 5-Day Forecast</h2>
