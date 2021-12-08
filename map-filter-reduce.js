@@ -1,4 +1,4 @@
-const users2 = [
+const users = [
     {
         id: 1,
         name: 'ryan',
@@ -35,13 +35,16 @@ const users2 = [
         yearsOfExperience: 9
     }
 ];
+// Exercise Problem 2
+const versatile = users.filter(user => user.languages.length >= 3)
+const versatileNames = versatile.map(user => user.name)
+// Exercise Problem 2
+const emails = users.map(user => user.email)
+// Exercise Problem 3
+const totalExperience = users.reduce((totalYears, user) => {return totalYears + user.yearsOfExperience},0);
+const avgExperience = totalExperience/users.length;
 
-const versatile = users2.filter(user => user.languages.length >= 3)
-let versatileNames = [];
-
-//DESTRUCTURE ME
-for(let user of versatile){
-    versatileNames.push(user.name);
-}
-let mapFilterReduce = `Filter by 3 Languages: ${versatile.name}`;
+let mapFilterReduce = `Filter by 3 Languages: ${versatileNames}`
+    mapFilterReduce += '<br>'+`List of Emails: ${emails}`;
+    mapFilterReduce += '<br>'+`Total Experience: ${totalExperience}, Average Experience: ${avgExperience}`;
 $('#map-filter-reduce').html(mapFilterReduce);
