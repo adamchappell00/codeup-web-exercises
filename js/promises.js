@@ -13,4 +13,15 @@ const userLastPush = (user) => fetch(`https://api.github.com/users/${user}/event
 //call the function
 userLastPush(userName);
 
-
+// Part 2
+let setTime;
+const wait = (time) => {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            setTime = time;
+            resolve();
+        }, time);
+    });
+}
+wait(1000).then(() => console.log(`You'll see this after ${setTime} milliseconds`));
+wait(3000).then(() => console.log(`You'll see this after ${setTime} milliseconds`));
